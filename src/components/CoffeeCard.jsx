@@ -32,27 +32,32 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
   const { _id, name, quentity, suplier, taste, category, details, photo } =
     coffee;
   return (
-    <div className="card card-side bg-[#F5F4F1] shadow-xl p-20">
-      <figure>
-        <img src={photo} alt="Movie" />
-      </figure>
-      <div className="flex w-full justify-between pr-10 pl-10">
-        <div>
-          <h2 className="card-title">{name}</h2>
-          <p>{quentity}</p>
-          <p>{suplier}</p>
-          <p>{taste}</p>
-        </div>
-        <div className="card-actions">
-          <div className="btn-group btn-group-vertical space-y-4">
-            <button className="btn btn-primary">View</button>
-            <Link to={`/Updatecoffee/${_id}`}>
-              {" "}
-              <button className="btn btn-secondary">Edit</button>
-            </Link>
-            <button onClick={() => handleDelete(_id)} className="btn btn-error">
-              Delete
-            </button>
+    <div>
+      <div className="card card-side bg-[#F5F4F1] shadow-xl p-20">
+        <figure>
+          <img src={photo} alt="Movie" />
+        </figure>
+        <div className="flex w-full justify-between pr-10 pl-10">
+          <div>
+            <h2 className="card-title">{name}</h2>
+            <p>{quentity}</p>
+            <p>{suplier}</p>
+            <p>{taste}</p>
+          </div>
+          <div className="card-actions">
+            <div className="btn-group btn-group-vertical space-y-4">
+              <button className="btn btn-primary">View</button>
+              <Link to={`/Updatecoffee/${_id}`}>
+                {" "}
+                <button className="btn btn-secondary">Edit</button>
+              </Link>
+              <button
+                onClick={() => handleDelete(_id)}
+                className="btn btn-error"
+              >
+                Delete
+              </button>
+            </div>
           </div>
         </div>
       </div>
